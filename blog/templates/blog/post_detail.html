@@ -10,21 +10,21 @@
         {% endif %}
         </aside>
         {% if post.published_date %}
-        <div data-gb-custom-block data-tag="if"></div>
+    <div data-gb-custom-block data-tag="if"></div>
 
         <div class="date">
-            {{ post.published_date }}
+        {{ post.published_date }}
         </div>
-    
+
     <div data-gb-custom-block data-tag="else"></div>
-    
+
         <a class="btn btn-default" href="
-    
+
     <div data-gb-custom-block data-tag="url" data-0='post_publish'>
-    
+
     ">Publish</a>
-    
-    </div>       
+
+    </div>      
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
