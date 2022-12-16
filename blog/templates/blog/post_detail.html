@@ -11,13 +11,27 @@
         
     <div data-gb-custom-block data-tag="else"></div>
 
-        <a class="btn btn-default" href="
-    
-    <div data-gb-custom-block data-tag="url" data-0='post_publish'>">Publish</a>
+        <a class="btn btn-default" href="<div data-gb-custom-block data-tag="url" data-0='post_publish'>">Publish</a>
     
     </div>       
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
+<!-- here we will add the bellow ccode untill before {%endblock%}-->>
+    
+<!-- <div data-gb-custom-block data-tag="for"></div> -->
+    
+    <hr>
+{% for comment in post.comments.all %}
+    <div class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+
+
 {% endblock %}
