@@ -1,5 +1,5 @@
-{% load static %}
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
     <article class="post">
@@ -19,11 +19,11 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    <hr>
 <!-- here we will add the bellow ccode untill before {%endblock%}-->>
     
     <div data-gb-custom-block data-tag="for"></div>
-    
-   
+    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
     <div class="comment">
         <div class="date">{{ comment.created_date }}</div>
         <strong>{{ comment.author }}</strong>
